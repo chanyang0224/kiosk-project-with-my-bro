@@ -7,35 +7,9 @@
 <html>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <head>
-	<title>키오스크</title>
-	<style>
-	main{
-		background-image:url(${path}/resources/images/coffee-background3.jpg); 
-		background-size:cover; 
-		background-position:center; 
-		padding:10px; 
-	}
-	h1{
-		font-size:4rem;
-		text-align:center;
-		padding:20px
-	}
-	footer{
-		background:#222222; 
-		text-align:center; 
-		padding:13px; 
-	}
-	#btn_group button{
-		font-size:2.5rem; 
-		background-color:#222222; 
-		color:white; 
-		border: 1px #222222;
-	}
-	#btn_group button:hover{
-		color:black;
-		background-color:white;			
-	}	
-	</style>
+	<link rel="stylesheet" type="text/css" href="${path}/resources/css/home.css">
+	 
+ 	<title>키오스크</title>	
 </head>
 
 <body>

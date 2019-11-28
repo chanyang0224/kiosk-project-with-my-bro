@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+* {
+	font-family: "나눔고딕", "맑은고딕", "굴림", "Helvetica";
+}
+
+main {
+	background-image: url(../images/coffee-background3.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 10px;
+}
+
+h1 {
+	font-size: 4rem;
+	text-align: center;
+	padding: 20px
+}
+
+footer {
+	background: #222222;
+	text-align: center;
+	padding: 13px;
+}
+
+#btn_group button {
+	font-size: 2.5rem;
+	background-color: #222222;
+	color: white;
+	border: 1px #222222;
+}
+
+#btn_group button:hover {
+	color: black;
+	background-color: white;
+}
