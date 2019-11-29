@@ -1,4 +1,4 @@
-package com.project.kiosk;
+package com.project.kiosk.home;
 
 import java.text.DateFormat;
 import java.util.Date;

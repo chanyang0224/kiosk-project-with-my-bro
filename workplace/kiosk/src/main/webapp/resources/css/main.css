@@ -3,6 +3,7 @@
 #topMenu {
 	height: 50px;
 	width: 1400px;
+	margin-bottom: 20px;
 }
 #topMenu ul li {
 	list-style: none;
@@ -30,6 +31,7 @@
 	text-align: center;
 }
 #pic_group .pic {
-	height: 450px;
-	width: 450px;
+	height: 220px;
+	width: 350px;
+	margin: 10px;
 }
