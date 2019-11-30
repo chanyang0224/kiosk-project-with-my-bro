@@ -11,15 +11,7 @@
 </head>
 <body>
 	<header>
-		<nav id="topMenu">
-			<ul>
-				<li><a class="menuLink" href="#">커피</a></li>
-				<li><a class="menuLink" href="#">주스</a></li>
-				<li><a class="menuLink" href="#">아이스티</a></li>
-				<li><a class="menuLink" href="#">차</a></li>
-				<li><a class="menuLink" href="#">디저트</a></li>
-			</ul>
-		</nav>
+		<%@ include file="../include/menu.jsp" %>
 	</header>
 	<main id="pic_group">
 		<button class="pic" onclick="#">아메리카노(핫)</button>
@@ -29,5 +21,8 @@
 		<button class="pic" onclick="#">연유라떼</button>
 		<button class="pic" onclick="#">카라멜마끼아또</button>
 	</main>
+	<footer>
+		<%@ include file="../include/payment.jsp" %>
+	</footer>
 </body>
 </html>
