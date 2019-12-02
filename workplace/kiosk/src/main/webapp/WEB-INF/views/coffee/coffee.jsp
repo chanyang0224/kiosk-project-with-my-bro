@@ -23,6 +23,7 @@
 	</main>
 	<footer>
 		<%@ include file="../include/payment.jsp" %>
+		<%@ include file="../include/popup.jsp" %>
 	</footer>
 </body>
 </html>

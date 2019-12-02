@@ -15,9 +15,9 @@
 		<nav id="bottomMenu">
 			<ul>
 				<li class="whiteSpace">여백</li>
-				<li><a class="menuLink" href="#">취소</a></li>
-				<li><a class="menuLink" href="#">카드 결제</a></li>
-				<li><a class="menuLink" href="#">장바구니</a></li>
+				<li><a id="menuLink" href="#">취소</a></li>
+				<li><a id="menuLink" href="#">카드 결제</a></li>
+				<li><a id="menuLink" class="trigger">장바구니</a></li>
 			</ul>
 		</nav>
 	</footer>

@@ -14,7 +14,7 @@
 	vertical-align: middle;
 	text-align: center;
 }
-#bottomMenu .menuLink {
+li #menuLink {
 	text-decoration: none;
 	color: white;
 	display: block;
@@ -23,7 +23,7 @@
 	font-weight: bold;
 	font-family: "Trebuchet MS", Dotum, Arial;
 }
-#bottomMenu .menuLink:hover {
+li #menuLink:hover {
 	color: white;
 	background-color: #4d4d4d;
 }
