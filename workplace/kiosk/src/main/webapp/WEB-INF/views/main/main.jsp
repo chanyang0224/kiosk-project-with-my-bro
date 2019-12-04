@@ -24,6 +24,7 @@
 	<footer>
 		<%@ include file="../include/payment.jsp" %>
 		<%@ include file="../include/popup.jsp" %>
+		<%@ include file="../include/popup2.jsp" %>
 	</footer>
 </body>
 </html>

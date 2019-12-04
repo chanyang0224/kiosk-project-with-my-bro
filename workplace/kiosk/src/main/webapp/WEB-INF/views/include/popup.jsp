@@ -16,18 +16,21 @@
 			<span class="close-button">&times;</span> <!-- &times;는 x를 의미  -->
 			<h1 class="title">장바구니</h1>
 			<form action="#" method="POST">
-				<label for="product">주문 내역</label>>
-				<button>주문 상품</button>
-				<label></label>
+				<label for="product">주문 내역</label>
+				<ul>
+					<li class="list">아메리카노</li>
+					<li class="list">초코쿠키</li>
+					<li class="list">딸기 티라미슈</li>
+				</ul>
 				<input type="button" id="cancel" value="취소">
-				<input type="submit" id="payment" value="결제 하기"> 
+				<input type="submit" id="payment" value="카드 결제"> 
 			</form>
 		</div>
 	</div>
 	
 	<script type="text/javascript">
 		var modal = document.querySelector(".modal");
-		var trigger = document.querySelector(".trigger");
+		var trigger1 = document.querySelector(".trigger1");
 		var closeButton = document.querySelector(".close-button");
 		var cancelButton = document.querySelector("#cancel");
 
@@ -43,7 +46,7 @@
 			}
 		}
 
-		trigger.addEventListener("click", toggleModal);
+		trigger1.addEventListener("click", toggleModal);
 		closeButton.addEventListener("click", toggleModal); 
         cancel.addEventListener("click", toggleModal); 
         window.addEventListener("click", windowOnClick);
