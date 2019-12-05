@@ -14,55 +14,7 @@ h1 {
 	color: #216182;
 }
 
-label {
-	display: block;
-	margin-top: 20px;
-	letter-spacing: 2px;
-}
-
-form {
-	margin: 0 auto;
-	width: 650px;
-	height: 400px;
-}
-
-#payment {
-	width: 127px;
-	height: 48px;
-	text-align: center;
-	border: none;
-	margin-top: 20px;
-	cursor: pointer;
-	position: absolute;
-	left: 375px;
-	top: 420px;
-}
-
-#payment:hover {
-	color: #fff;
-	background-color: #216282;
-	opacity: 0.9;
-}
-
-#cancel {
-	width: 127px;
-	height: 48px;
-	text-align: center;
-	border: none;
-	margin-top: 20px;
-	cursor: pointer;
-	position: absolute;
-	left: 225px;
-	top: 420px;
-}
-
-#cancel:hover {
-	color: #fff;
-	background-color: #216282;
-	opacity: 0.9;
-}
-
-.modal {
+.modal2 {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -76,19 +28,19 @@ form {
 		0.25s;
 }
 
-.modal-content {
+.modal-content2 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: white;
 	padding: 1rem 1.5rem;
-	width: 660px;
+	width: 490px;
 	height: 470px;
 	border-radius: 0.5rem;
 }
 
-.close-button {
+.close-button2 {
 	float: right;
 	width: 1.5rem;
 	line-height: 1.5rem;
@@ -98,7 +50,7 @@ form {
 	background-color: lightgray;
 }
 
-.close-button:hover {
+.close-button2:hover {
 	background-color: darkgray;
 }
 
@@ -108,8 +60,14 @@ form {
 	transform: scale(1.0);
 	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
-.list {
-	margin:10px;
-	list-style: decimal;
-	text-align: left;
+
+.img {
+	margin-top: 20px;
+	width : 500px;
+	height : 350px;
+	background-color: #A52A2A;
+	position: absolute;
+	left: 18px;
+	background-image: url(../images/creditcard2.png);
+	border-radius: 0.25rem;
 }
