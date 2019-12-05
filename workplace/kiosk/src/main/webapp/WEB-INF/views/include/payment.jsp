@@ -14,7 +14,7 @@
 	<footer>
 		<nav id="bottomMenu">
 			<ul>
-				<li class="whiteSpace">여백</li>
+				<li class="whiteSpace">&nbsp;&nbsp;</li> <!-- &nbsp;는 공백을 의미 -->
 				<li><a id="menuLink" href="#">취소</a></li>
 				<li><a id="menuLink" href="#">카드 결제</a></li>
 				<li><a id="menuLink" class="trigger">장바구니</a></li>
