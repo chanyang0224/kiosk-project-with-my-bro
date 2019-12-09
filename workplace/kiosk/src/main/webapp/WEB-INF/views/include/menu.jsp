@@ -13,11 +13,11 @@
 	<header>
 		<nav id="topMenu">
 			<ul>
-				<li><a class="menuLink" href="#">커피</a></li>
-				<li><a class="menuLink" href="#">주스</a></li>
-				<li><a class="menuLink" href="#">아이스티</a></li>
-				<li><a class="menuLink" href="#">차</a></li>
-				<li><a class="menuLink" href="#">디저트</a></li>
+				<li><a class="menuLink" href="http://localhost:8080/kiosk/coffee">커피</a></li>
+				<li><a class="menuLink" href="http://localhost:8080/kiosk/juice">주스</a></li>
+				<li><a class="menuLink" href="http://localhost:8080/kiosk/icetea">아이스티</a></li>
+				<li><a class="menuLink" href="http://localhost:8080/kiosk/tea">차</a></li>
+				<li><a class="menuLink" href="http://localhost:8080/kiosk/dessert">디저트</a></li>
 			</ul>
 		</nav>
 	</header>
