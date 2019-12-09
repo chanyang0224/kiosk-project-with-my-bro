@@ -1,13 +1,38 @@
 @charset "UTF-8";
 
 #pic_group {
+	width: 1175px;
 	text-align: center;
+	margin: 0 auto;
 }
 #pic_group .pic {
 	height: 180px;
 	width: 330px;
-	margin-left: 25px;
-	margin-right: 25px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin: 10px 25px;
+	padding: 0 0;
+}
+#price {
+	height: 50px;
+	margin: 0 auto;
+	width: 1175px;
+}
+#price ul {
+	height: 50px;
+	text-align: center;
+	margin: 0 0;
+	padding: 0 0;
+}
+#price li {
+	color: black;
+	text-align: center;
+	display: block;
+	height: 50px;
+	width: 330px;
+	margin: 0 25px;
+	list-style: none;
+	float: left;
+	background: yellowgreen;
+}
+#price:after {
+	clear: both;
 }

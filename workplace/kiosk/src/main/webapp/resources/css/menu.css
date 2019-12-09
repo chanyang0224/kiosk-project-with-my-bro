@@ -2,8 +2,13 @@
 
 #topMenu {
 	height: 50px;
-	width: 1260px;
+	background: white;
 	margin-bottom: 20px;
+}
+#topMenu ul {
+	height: 50px;
+	width: 1175px;
+	margin: 0 auto;
 }
 #topMenu ul li {
 	list-style: none;
@@ -26,4 +31,8 @@
 #topMenu .menuLink:hover {
 	color: white;
 	background-color: #4d4d4d;
+}
+#topMenu:after {
+	clear: both;
+	display: block;
 }
