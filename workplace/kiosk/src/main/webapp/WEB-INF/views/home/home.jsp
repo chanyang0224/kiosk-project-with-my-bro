@@ -22,8 +22,8 @@
 		</h1>
 	</main>
 	<footer id="btn_group">
-		<button style="margin-right:5px" type="button" onclick="#">매장 식사</button> 
-		<button style="margin-left:5px" type="button" onclick="#">포장</button>
+		<button style="margin-right:5px" type="button" onclick="location.href='http://localhost:8080/kiosk/main'">매장 식사</button> 
+		<button style="margin-left:5px" type="button" onclick="location.href='http://localhost:8080/kiosk/main'">포장</button>
 	</footer>
 </body>
 
