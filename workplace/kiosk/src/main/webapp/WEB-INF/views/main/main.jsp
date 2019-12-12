@@ -1,3 +1,4 @@
+<%@page import="com.project.kiosk.vo.KioskVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -14,31 +15,23 @@
 	<header>
 		<%@ include file="../include/menu.jsp" %>
 	</header>
-	<main>
-		<div id="pic_group">
-			<button class="pic" onclick="#">아메리카노(핫)</button>
-			<button class="pic" onclick="#">아메리카노(아이스)</button>
-			<button class="pic" onclick="#">에스프레소</button>
-		</div>
-		<div id="price">
-			<ul>
-				<li>1500원</li>
-				<li>2000원</li>
-				<li>1500원</li>
-			</ul>
-		</div>
-		<div id="pic_group">
-			<button class="pic" onclick="#">초코라떼</button>
-			<button class="pic" onclick="#">연유라떼</button>
-			<button class="pic" onclick="#">카라멜마끼아또</button>
-		</div>
-		<div id="price">
-			<ul>
-				<li>1500원</li>
-				<li>2000원</li>
-				<li>1500원</li>
-			</ul>
-		</div>
+	<main class="container">
+		<c:forEach items="${coffee}" var="coffee">
+			<% 
+				KioskVO coffee = (KioskVO)pageContext.getAttribute("coffee");
+				String img = coffee.getImg();
+				String[] imgLocation = img.split("/");
+				String folder = imgLocation[imgLocation.length-2];
+				String jpg = imgLocation[imgLocation.length-1];
+				pageContext.setAttribute("folder", folder);
+				pageContext.setAttribute("jpg", jpg);
+			%>
+			<div id="pic_price">
+				<button class="pic" onclick="#" style="background-image: url(http://localhost:8080/kiosk_image/${folder}/${jpg})"></button>
+				<span class="product">${coffee.product}</span>
+				<span class="price">${coffee.price}원</span>
+			</div>
+		</c:forEach>
 	</main>
 	<footer>
 		<%@ include file="../include/payment.jsp" %>

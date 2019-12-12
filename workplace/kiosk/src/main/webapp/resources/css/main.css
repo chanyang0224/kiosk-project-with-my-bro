@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#pic_group {
+/* #pic_group {
 	width: 1175px;
 	text-align: center;
 	margin: 0 auto;
@@ -36,3 +36,42 @@
 #price:after {
 	clear: both;
 }
+ */
+ 
+ .container {
+ 	width: 1175px;
+ 	margin: 0 auto;
+ }
+ 
+ #pic_price {
+ 	background: #50C878;
+ 	width: 330px;
+ 	height: 230px;
+ 	margin: 10px 25px;
+ 	display: inline-block;
+ }
+ 
+ .pic {
+ 	width: 330px;
+ 	height: 180px;
+ 	border: 0;
+ 	padding: 0 0;
+ }
+ 
+ .price {
+ 	color: black;
+ 	display: block;
+ 	width: 330px;
+ 	height: 22px;
+ }
+
+.product {
+	color: black;
+ 	display: block;
+ 	width: 330px;
+ 	height: 22px;
+}
+ 
+ .pic:hover {
+ 	opacity: 0.7;
+ }

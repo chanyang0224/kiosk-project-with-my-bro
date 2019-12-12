@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="kiosk">
+    <select id="selectAll" resultType="kiosk">
+        select * from contents
+    </select>
+    
+    <select id="selectCoffee" resultType="kiosk">
+    	select * from contents where id like "C%"
+    </select>
+    
+    <select id="selectJuice" resultType="kiosk">
+    	select * from contents where id like "J%"
+    </select>
+    
+    <select id="selectIceTea" resultType="kiosk">
+    	select * from contents where id like "I%"
+    </select>
+    
+    <select id="selectTea" resultType="kiosk">
+    	select * from contents where id like "T%"
+    </select>
+    
+    <select id="selectDessert" resultType="kiosk">
+    	select * from contents where id like "D%"
+    </select>
+</mapper>
