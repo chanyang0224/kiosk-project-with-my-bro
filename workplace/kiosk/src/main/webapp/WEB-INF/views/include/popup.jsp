@@ -1,3 +1,4 @@
+<%@page import="com.mysql.fabric.xmlrpc.base.Param"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -16,14 +17,13 @@
 			<span class="close-button">&times;</span> <!-- &times;는 x를 의미  -->
 			<h1 class="title">장바구니</h1>
 			<form action="#" method="POST">
-				<label for="product">주문 내역</label>
-				<ul>
-					<li class="list">아메리카노</li>
-					<li class="list">초코쿠키</li>
-					<li class="list">딸기 티라미슈</li>
+				<label class="first_label" for="product">주문 내역</label>
+				<label for="product">개수</label>
+				<label for="product">가격</label>
+				<ul id="list_mom">
 				</ul>
+				<input type="submit" id="payment" value="카드 결제">
 				<input type="button" id="cancel" value="취소">
-				<input type="submit" id="payment" value="카드 결제"> 
 			</form>
 		</div>
 	</div>

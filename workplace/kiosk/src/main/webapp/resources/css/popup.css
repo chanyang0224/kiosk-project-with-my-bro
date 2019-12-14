@@ -15,9 +15,16 @@ h1 {
 }
 
 label {
-	display: block;
+	width: 180px;
+	display: inline-block;
+	margin: 0 5px;
 	margin-top: 20px;
 	letter-spacing: 2px;
+	text-align: center;
+}
+
+.first_label {	
+	margin-left: 40px;
 }
 
 form {
@@ -34,7 +41,7 @@ form {
 	margin-top: 20px;
 	cursor: pointer;
 	position: absolute;
-	left: 375px;
+	left: 225px;
 	top: 420px;
 }
 
@@ -52,7 +59,7 @@ form {
 	margin-top: 20px;
 	cursor: pointer;
 	position: absolute;
-	left: 225px;
+	left: 375px;
 	top: 420px;
 }
 
@@ -109,7 +116,12 @@ form {
 	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 .list {
+	width: 180px;
 	margin:10px;
-	list-style: decimal;
-	text-align: left;
+	list-style: none;
+	float: left;
+	text-align: center;
+}
+#first_li {
+	list-style: disc;
 }
