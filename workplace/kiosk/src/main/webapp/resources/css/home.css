@@ -34,3 +34,7 @@ footer {
 	color: black;
 	background-color: white;
 }
+
+#frm, #frm2 {
+	display: none;
+}

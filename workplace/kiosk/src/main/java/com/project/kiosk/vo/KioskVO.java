@@ -1,5 +1,7 @@
 package com.project.kiosk.vo;
 
+/* "VO(Value Object)" 또는 "DTO(Data Transfer Object)"라고 함 */
+/* DB에서 불러온 데이터를 객체로 변환하는 객체 */
 public class KioskVO {
 	private String id;
 	private String product;
@@ -7,6 +9,8 @@ public class KioskVO {
 	private String launch_date;
 	private String img;
 	
+	/* getter와 setter를 이용해서 값을 저장하고 추출할 수 있음 */
+	/* get이나 set 뒤의 명칭은 Property로써 DB의 변수 명과 동일함 */
 	public String getId() {
 		return id;
 	}

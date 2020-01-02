@@ -5,29 +5,38 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
+	<!-- MySQL과 Mybatis, Mybatis 사용 설정 template, mapper scanner bean 등록(시작) -->
 	<!-- MySQL dataSource -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> 
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/cafe"/> 
+        <!-- schema명 뒤에 인코딩 관련 구문을 추가함으로서 Mybatis와 MySQL사이의 한글 인코딩 문제 해결 -->
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/cafe?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"/>
         <property name="username" value="root"/>
         <property name="password" value="1234"/>
     </bean>
     
 	<!-- MyBatis -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- value에 해당하는 경로에(classpath:mybatis-config.xml) 동일한 이름의 파일을 생성할 것 -->
+		<!-- classpath는 eclipse 메뉴창 Project/Properties/Resource/Development Assembly에서 확인 가능 -->
+		<!-- classpath는 기본적으로 src/main/resources로 설정되어 있음 -->
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 		<property name="dataSource" ref="dataSource"></property>
+		<!-- Mapper파일 위치 설정 -->
 		<property name="mapperLocations" value="classpath:mappers/**/*.xml"></property>
 	</bean>
 	
 	<!-- mybatis 사용 설정 template -->
+	<!-- sqlSession bean을 통해 DAO객체에서 Mapper에 등록한 SQL문을 사용할 수 있음 -->
 	<bean id ="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
 		destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 	
-	<!-- mapper scanner -->
+	<!-- Mapper scanner -->
+	<!-- basePackge 설정을 통해 패키지 하위의 interface를 자동으로 Mapper로 인식하게 만듦 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.project.kiosk"/>
 	</bean>
+	<!-- MySQL과 Mybatis, Mybatis 사용 설정 template, mapper scanner bean 등록(끝) -->
 </beans>

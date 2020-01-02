@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+	<!-- Maven으로 빌드된 project 동작시 가장 먼저 실행되는 설정 파일 -->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>java.project</groupId>
 	<artifactId>kiosk</artifactId>
@@ -8,12 +9,14 @@
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
+		<!-- Java와 Spring의 버전을 설정하는 부분. 태그 사이의 값을 변경함으로써 버전을 바꿀 수 있음 -->
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+		<!-- dependency를 작성하는 부분. Maven을 통해 관련 라이브러리를 빌드함 -->
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -117,7 +120,9 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- mybatis -->
+		<!-- MyBatis를 이용해 MySQL에 연동하기 위한 부분(시작) -->
+		<!-- 추가후  -->
+		<!-- /WEB-INF/spring 경로에 있는 "root-context.xml" 파일에 관련 bean을 등록할 것 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
@@ -149,6 +154,29 @@
 			<artifactId>mysql-connector-java</artifactId> 
 			<version>5.1.31</version> 
 		</dependency>
+		<!-- MyBatis를 이용해 MySQL에 연동하기 위한 부분(끝) -->
+		
+		<!-- commons-io. POST로 보낸 data를 읽어오는 기능 -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.5</version>
+		</dependency>
+		
+		<!--JSON-->
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>2.9.3</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+	<dependency>
+	    <groupId>com.googlecode.json-simple</groupId>
+	    <artifactId>json-simple</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+	
 	</dependencies>
     <build>
         <plugins>

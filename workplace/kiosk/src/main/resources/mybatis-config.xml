@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org/DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
+<!-- Mapper 기본 설정 파일 -->
+<!-- 다른 Mapper를 검색하기 전에 먼저 검색하여 설정 적용 -->
 <configuration>
+	<!-- typeAliases : 기존에 선언되어있는 유형(객체, 타입)에 새로운 유형의 별칭을 사용함으로써 코드를 더 읽기 쉽게 만드는 문법 -->
+	<!-- 예시) "com.project.kiosk.vo.KioskVO" 객체를 "kiosk"라는 별칭을 사용하여 표현 -->
 	<typeAliases>
 		<typeAlias type="com.project.kiosk.vo.KioskVO" alias="kiosk" />
 	</typeAliases>

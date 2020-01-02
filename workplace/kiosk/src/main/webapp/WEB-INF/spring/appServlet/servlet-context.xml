@@ -14,13 +14,17 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-
+	
+	<!-- ViewResolver 설정 bean -->
+	<!-- prefix + @RequestMapping 메서드의 반환값  + suffix로 View 파일(JSP)을 찾음-->
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- component-scanner 설정 태그 -->
+	<!-- "@(어노테이션)"을 포함한 패키지를 설정하여 Controller를 인식하게 함 -->
 	<context:component-scan base-package="com.project.kiosk.*" />
 	
 	

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
+ <!-- Mapper파일에 SQL문을 등록하는 부분 -->
+ <!-- DAO객체 내에서 namespace.id로 호출가능 -->
+ <!-- 예시) sqlSession.selectList("kiosk.selectCoffee"); -->
+ <!--      sqlSession.selectList("namespace.id");       -->
 <mapper namespace="kiosk">
+	<!-- SQL문을 구별할 수 있는 태그를 부여. 예시) <select></select>, <insert></insert> 등 -->
+	<!-- 태그 안에 꼭 "id"와 "resultType"을 명시해야함 -->
+	<!-- "resultType" 같은 경우 따로 "VO(Value Object)" 객체를 만들어 불러오거나 Java의 데이터 타입을 지정할 수 있음 -->
+	<!-- 예시) resultType="com.project.kiosk.vo.KioskVO", resultType="String" -->
+	<!-- SQL문을 작성할 때는 ";(세미콜론)"은 제외하고 작성 -->
     <select id="selectAll" resultType="kiosk">
         select * from contents
     </select>
@@ -24,5 +33,10 @@
     
     <select id="selectDessert" resultType="kiosk">
     	select * from contents where id like "D%"
+    </select>
+    
+    <select id="insertData">
+    	insert into payment_data (charge_date, charge_time, product_data, take_out)
+    	values (#{charge_date}, #{charge_time}, #{product_data}, #{take_out})
     </select>
 </mapper>
