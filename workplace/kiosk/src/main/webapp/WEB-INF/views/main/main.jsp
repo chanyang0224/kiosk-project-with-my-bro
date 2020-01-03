@@ -56,6 +56,7 @@
 		var dictCheck = {};
 		// 결제를 위한 임시 변수
 		var rsp = true;
+		// 매장 이용 방식을 담은 변수
 		var take_out = {"flag" : "<%= request.getParameter("take_out") %>"};
 		console.log(take_out);
 		
@@ -259,6 +260,28 @@
  					alert("결제를 처음부터 다시 진행해주세요");
  				}
  	 	 	}		
+		});
+
+		// 상단 menu를 클릭했을 시 작동하는 function
+		$("#coffee, #juice, #icetea, #tea, #dessert").click(function(){
+			// web에서 전송 가능한 json형식으로 타입 변환
+			var temp = {"temp" : arrProduct};
+			var temp2 = {"temp" : arrPrice};
+			// click한 메뉴의 id값이 "coffee"라면
+			if($(this).attr("id")=="coffee") {
+				// 다음 로직을 실행
+				if(window.sessionStorage){
+					sessionStorage.setItem("cnt", cnt);
+					// JSON.stringify를 통해 String으로 타입을 변경 후 session에 저장
+					// web에서 object를 주고받는 방식
+					sessionStorage.setItem("arrProduct", JSON.stringify(temp));
+					sessionStorage.setItem("arrPrice", JSON.stringify(temp2));
+					sessionStorage.setItem("dictProduct", JSON.stringify(dictProduct));
+					sessionStorage.setItem("take_out", JSON.stringify(take_out));
+				}
+				// coffee 메뉴가 있는 페이지로 이동
+				location.href="http://localhost:8080/kiosk/coffee";
+			}
 		});
 	</script>
 </body>
