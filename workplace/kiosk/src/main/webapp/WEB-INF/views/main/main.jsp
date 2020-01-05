@@ -1,6 +1,7 @@
 <%@ page import="com.project.kiosk.vo.KioskVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!-- jsp에서 jstl을 사용하기 위한 추가 내용 -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -8,18 +9,25 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="${path}/resources/css/main.css">
 	<meta charset="UTF-8">
+	<!-- 반응형 웹을 구성하기 위한 추가 내용 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+	<!-- js(JavaScript)에서 jquery를 사용하기 위한 추가 내용-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<title>메인 화면입니다</title>
 </head>
 <body>
+	<!-- 상단 메뉴바에 해당하는 부분 -->
 	<header>
 		<%@ include file="../include/menu.jsp" %>
 	</header>
+	<!-- 상품 정보에 해당하는 부분 -->
 	<main class="container">
+		<!-- jstl을 사용하여 forEach구문을 사용 -->
 		<c:forEach items="${coffee}" var="coffee">
+			<!-- 자바 코드를 사용하여 model로 추가한 attribute룰 받아옴 -->
 			<% 
 				KioskVO coffee = (KioskVO)pageContext.getAttribute("coffee");
+				// DB로부터 이미지 경로를 받아와서 필요한 정보(폴더명, 사진명)만 따로 분리하는 로직
 				String img = coffee.getImg();
 				String[] imgLocation = img.split("/");
 				String folder = imgLocation[imgLocation.length-2];
@@ -27,6 +35,7 @@
 				pageContext.setAttribute("folder", folder);
 				pageContext.setAttribute("jpg", jpg);
 			%>
+			<!-- 반복문이 끝날 때까지 상품정보(사진, 상품명, 가격정보)들을 화면에 뿌려줌  -->
 			<div id="pic_price">
 				<button type="button" class="pic" style="background-image: url(http://localhost:8080/kiosk_image/${folder}/${jpg})"></button>
 				<span class="product">${coffee.product}</span>
@@ -34,6 +43,7 @@
 			</div>
 		</c:forEach>
 	</main>
+	<!-- 하단 결제 메뉴와 알림창을 구성하는 부분 -->
 	<footer>
 		<%@ include file="../include/payment.jsp" %>
 		<%@ include file="../include/popup.jsp" %>
@@ -271,16 +281,122 @@
 			if($(this).attr("id")=="coffee") {
 				// 다음 로직을 실행
 				if(window.sessionStorage){
-					sessionStorage.setItem("cnt", cnt);
-					// JSON.stringify를 통해 String으로 타입을 변경 후 session에 저장
-					// web에서 object를 주고받는 방식
-					sessionStorage.setItem("arrProduct", JSON.stringify(temp));
-					sessionStorage.setItem("arrPrice", JSON.stringify(temp2));
-					sessionStorage.setItem("dictProduct", JSON.stringify(dictProduct));
-					sessionStorage.setItem("take_out", JSON.stringify(take_out));
+					// 상품을 클릭하지 않았다면
+					if(cnt==0) {
+						// null값 확인용 정보를 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+					}
+					// 상품을 클릭했다면
+					else {
+						// 상품 구매 정보 등을 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+						// JSON.stringify를 통해 String으로 타입을 변경 후 session에 저장
+						// web에서 object를 주고받는 방식
+						sessionStorage.setItem("arrProduct", JSON.stringify(temp));
+						sessionStorage.setItem("arrPrice", JSON.stringify(temp2));
+						sessionStorage.setItem("dictProduct", JSON.stringify(dictProduct));
+						sessionStorage.setItem("take_out", JSON.stringify(take_out));
+					}
 				}
 				// coffee 메뉴가 있는 페이지로 이동
 				location.href="http://localhost:8080/kiosk/coffee";
+			}
+			// click한 메뉴의 id값이 "juice"라면
+			else if($(this).attr("id")=="juice") {
+				// 다음 로직을 실행
+				if(window.sessionStorage){
+					// 상품을 클릭하지 않았다면
+					if(cnt==0) {
+						// null값 확인용 정보를 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+						sessionStorage.setItem("take_out", JSON.stringify(take_out));
+					}
+					// 상품을 클릭했다면
+					else {
+						// 상품 구매 정보 등을 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+						// JSON.stringify를 통해 String으로 타입을 변경 후 session에 저장
+						// web에서 object를 주고받는 방식
+						sessionStorage.setItem("arrProduct", JSON.stringify(temp));
+						sessionStorage.setItem("arrPrice", JSON.stringify(temp2));
+						sessionStorage.setItem("dictProduct", JSON.stringify(dictProduct));
+						sessionStorage.setItem("take_out", JSON.stringify(take_out));
+					}
+				}
+				// juice 메뉴가 있는 페이지로 이동
+				location.href="http://localhost:8080/kiosk/juice";
+			}
+			// click한 메뉴의 id값이 "icetea"라면
+			else if($(this).attr("id")=="icetea") {
+				// 다음 로직을 실행
+				if(window.sessionStorage){
+					// 상품을 클릭하지 않았다면
+					if(cnt==0) {
+						// null값 확인용 정보를 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+					}
+					// 상품을 클릭했다면
+					else {
+						// 상품 구매 정보 등을 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+						// JSON.stringify를 통해 String으로 타입을 변경 후 session에 저장
+						// web에서 object를 주고받는 방식
+						sessionStorage.setItem("arrProduct", JSON.stringify(temp));
+						sessionStorage.setItem("arrPrice", JSON.stringify(temp2));
+						sessionStorage.setItem("dictProduct", JSON.stringify(dictProduct));
+						sessionStorage.setItem("take_out", JSON.stringify(take_out));
+					}
+				}
+				// icetea 메뉴가 있는 페이지로 이동
+				location.href="http://localhost:8080/kiosk/icetea";
+			}
+			// click한 메뉴의 id값이 "tea"라면
+			else if($(this).attr("id")=="tea") {
+				// 다음 로직을 실행
+				if(window.sessionStorage){
+					// 상품을 클릭하지 않았다면
+					if(cnt==0) {
+						// null값 확인용 정보를 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+					}
+					// 상품을 클릭했다면
+					else {
+						// 상품 구매 정보 등을 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+						// JSON.stringify를 통해 String으로 타입을 변경 후 session에 저장
+						// web에서 object를 주고받는 방식
+						sessionStorage.setItem("arrProduct", JSON.stringify(temp));
+						sessionStorage.setItem("arrPrice", JSON.stringify(temp2));
+						sessionStorage.setItem("dictProduct", JSON.stringify(dictProduct));
+						sessionStorage.setItem("take_out", JSON.stringify(take_out));
+					}
+				}
+				// tea 메뉴가 있는 페이지로 이동
+				location.href="http://localhost:8080/kiosk/tea";
+			}
+			// click한 메뉴의 id값이 "dessert"라면
+			else {
+				// 다음 로직을 실행
+				if(window.sessionStorage){
+					// 상품을 클릭하지 않았다면
+					if(cnt==0) {
+						// null값 확인용 정보를 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+					}
+					// 상품을 클릭했다면
+					else {
+						// 상품 구매 정보 등을 session에 저장
+						sessionStorage.setItem("cnt", cnt);
+						// JSON.stringify를 통해 String으로 타입을 변경 후 session에 저장
+						// web에서 object를 주고받는 방식
+						sessionStorage.setItem("arrProduct", JSON.stringify(temp));
+						sessionStorage.setItem("arrPrice", JSON.stringify(temp2));
+						sessionStorage.setItem("dictProduct", JSON.stringify(dictProduct));
+						sessionStorage.setItem("take_out", JSON.stringify(take_out));
+					}
+				}
+				// dessert 메뉴가 있는 페이지로 이동
+				location.href="http://localhost:8080/kiosk/dessert";
 			}
 		});
 	</script>
