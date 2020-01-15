@@ -4,11 +4,16 @@
 	font-family: "나눔고딕", "맑은고딕", "굴림", "Helvetica";
 }
 
+body {
+	zoom: 1.25;
+}
+
 main {
 	background-image: url(../images/coffee-background3.jpg);
 	background-size: cover;
 	background-position: center;
 	padding: 10px;
+	height: 600px;
 }
 
 h1 {
@@ -37,4 +42,16 @@ footer {
 
 #frm, #frm2 {
 	display: none;
+}
+
+@media screen and (max-width: 1023px) {
+	body {
+		zoom: 1;
+	}
+}
+
+@media screen and (max-width: 1023px) and (orientation: landscape) {
+	body {
+		zoom: 0.42;
+	}
 }

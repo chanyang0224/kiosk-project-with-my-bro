@@ -24,8 +24,8 @@
 		</h1>
 	</main>
 	<footer id="btn_group">
-			<button id="take_out" style="margin-right:5px">포장</button>
-			<button id="take_out2" style="margin-right:5px">매장 이용</button>
+			<button id="take_out" style="margin: 0 50px">포장</button>
+			<button id="take_out2">매장이용</button>
 		<form id="frm" action="${path}/main" method="get">
 			<input name="take_out" type="hidden" value="1"/>
 		</form>

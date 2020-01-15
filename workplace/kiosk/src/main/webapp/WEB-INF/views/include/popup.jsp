@@ -22,6 +22,7 @@
 				<label for="product">가격</label>
 				<ul id="list_mom">
 				</ul>
+				<div id="bill"></div>
 				<input type="button" id="payment" value="카드 결제">
 				<input type="button" id="cancel" value="취소">
 			</form>

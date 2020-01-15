@@ -48,14 +48,20 @@ public class KioskService implements KioskServiceImpl {
 
 	@Override
 	public List<KioskVO> tea() {
+		// DAO 객체에서 받아온 값을 List 타입의 객체에 할당
+		List<KioskVO> tea = dao.selectTea();
 		
-		return null;
+		// tea 객체를 반환
+		return tea;
 	}
 
 	@Override
 	public List<KioskVO> dessert() {
+		// DAO 객체에서 받아온 값을 List 타입의 객체에 할당
+		List<KioskVO> dessert = dao.selectDessert();
 		
-		return null;
+		// dessert 객체를 반환
+		return dessert;
 	}
 
 	@Override
