@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+body {
+	zoom: 1.5;	
+}
+
+.header {
+	text-align: center;
+	color: #ffb937;
+	font-size: 2.5em;
+}
+.web_background {
+	background: #f5f6f7;
+}
+
+.login_form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 1rem 1.5rem;
+	width: 400px;
+	height: 200px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.blind {
+	display: none;
+}
+
+.input_row {
+	position: relative;
+	height: 29px;
+	margin: 0 0 14px;
+	padding: 10px 35px 10px 15px;
+	border: solid 1px #dadada;
+	background: #fff;
+}
+
+.int {
+    font-size: 15px;
+    line-height: 16px;
+    position: relative;
+    z-index: 9;
+    width: 100%;
+    height: 16px;
+    padding: 7px 0 6px;
+    color: #000;
+    border: none;
+    background: #fff;
+    -webkit-appearance: none;
+}
+
+.btn_global {
+	display: block;
+    width: 100%;
+    height: 61px;
+    margin: 30px 0 14px;
+    padding-top: 1px;
+    border: none;
+    border-radius: 0;
+    background-color: #ffb937;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 61px;
+    -webkit-appearance: none;
+}
+
+.footer_area {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.alert {
+	color: #aaaaaa;
+	font-size: 0.75em;
+}
+
+@media screen and (max-width: 1023px) {
+	body {
+		zoom: 0.73;	
+	}
+}

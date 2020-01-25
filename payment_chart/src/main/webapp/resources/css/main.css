@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+	zoom: 1.25;	
+}
+
+legend {
+	position: relative;
+	text-align: center;
+    font-size: 2em;
+    margin: 15px 0 0 0;
+    z-index: 2;
+}
+
+.svg_area {
+	position: relative;
+	width: 900px;
+	margin: 0 auto;
+}
+
+.svg {
+	position: relative;
+	width: 900px;
+	margin: -40px 0;
+	z-index: 1;
+}
+
+.msg_box {
+	height: 50px;
+}
+
+.msg {
+	position: relative;
+	text-align: center;
+	z-index: 2;
+	color: #aaaaaa;
+}
+
+.hidden {
+	display: none;
+}
+
+@media screen and (max-width: 1023px) {
+	body {
+		zoom: 0.42;
+	}
+}

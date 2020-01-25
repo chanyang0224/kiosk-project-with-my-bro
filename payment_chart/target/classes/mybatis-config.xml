@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org/DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- Mapper 기본 설정 파일 -->
+<!-- 다른 Mapper를 검색하기 전에 먼저 검색하여 설정 적용 -->
+<configuration>
+
+</configuration>

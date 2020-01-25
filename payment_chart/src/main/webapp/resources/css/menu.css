@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+header {
+	height: 100px;
+}
+#topMenu {
+	height: 50px;
+	background: white;
+	margin: 0 auto;
+}
+
+#topMenu ul {
+	height: 50px;
+	width: 900px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#topMenu ul li {
+	list-style: none;
+	color: white;
+	background-color: #2d2d2d;
+	float: left;
+	line-height: 50px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#topMenu .menuLink {
+	text-decoration: none;
+	color: white;
+	display: block;
+	width: 148px;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: "Trebuchet MS", Dotum, Arial;
+	border: 1px solid white;
+}
+
+#topMenu .menuLink:hover {
+	color: white;
+	background-color: #4d4d4d;
+}
+
+#topMenu::after {
+	clear: both;
+	display: block;
+}
