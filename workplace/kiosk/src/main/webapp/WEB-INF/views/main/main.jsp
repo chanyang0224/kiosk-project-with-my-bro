@@ -37,7 +37,7 @@
 			%>
 			<!-- 반복문이 끝날 때까지 상품정보(사진, 상품명, 가격정보)들을 화면에 뿌려줌  -->
 			<div id="pic_price">
-				<button type="button" class="pic" style="background-image: url(http://182.229.50.83:8080/kiosk_image/${folder}/${jpg})"></button>
+				<button type="button" class="pic" style="background-image: url(http://localhost:8080/kiosk_image/${folder}/${jpg})"></button>
 				<span class="product">${coffee.product}</span>
 				<span class="price">${coffee.price}원</span>
 			</div>

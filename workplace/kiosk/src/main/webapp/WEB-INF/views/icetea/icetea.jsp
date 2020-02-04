@@ -28,7 +28,7 @@
 				pageContext.setAttribute("jpg", jpg);
 			%>
 			<div id="pic_price">
-				<button type="button" class="pic" style="background-image: url(http://182.229.50.83:8080/kiosk_image/${folder}/${jpg})"></button>
+				<button type="button" class="pic" style="background-image: url(http://localhost:8080/kiosk_image/${folder}/${jpg})"></button>
 				<span class="product">${icetea.product}</span>
 				<span class="price">${icetea.price}원</span>
 			</div>

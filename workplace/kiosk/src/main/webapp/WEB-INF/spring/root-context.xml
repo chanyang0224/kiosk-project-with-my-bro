@@ -32,11 +32,5 @@
 		destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
-	
-	<!-- Mapper scanner -->
-	<!-- basePackge 설정을 통해 패키지 하위의 interface를 자동으로 Mapper로 인식하게 만듦 -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.project.kiosk"/>
-	</bean>
 	<!-- MySQL과 Mybatis, Mybatis 사용 설정 template, mapper scanner bean 등록(끝) -->
 </beans>

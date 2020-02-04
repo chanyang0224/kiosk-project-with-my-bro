@@ -18,7 +18,7 @@
 				<li class="whiteSpace">&nbsp;&nbsp;</li>
 				<li><a id="menuLink" class="trigger1">장바구니</a></li>
 				<li><a id="menuLink" class="trigger2">카드 결제</a></li>
-				<li><a id="menuLink" href="http://182.229.50.83:8080/kiosk/">취소</a></li>
+				<li><a id="menuLink" href="http://localhost:8080/kiosk/">취소</a></li>
 			</ul>
 		</nav>
 	</footer>

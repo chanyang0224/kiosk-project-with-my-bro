@@ -80,6 +80,7 @@ $(".trigger1").click(function() {
 			dictCheck[arrProduct[i]] = 1;
 		}
 		if(Object.keys(dictProduct).length == rep) {
+			$(".p1").remove();
 			var bill = document.getElementById("bill");
 			var p1 = document.createElement("p");
 			var span1 = document.createElement("span");
@@ -97,12 +98,22 @@ $(".trigger1").click(function() {
 });
 
 // 취소 버튼을 부르면 값들을 초기화 시킴
-$("#cancel, .close-button").click(function() {
+$("#cancel").click(function() {
 	idx = 0;
 	cnt = 0;
 	arrProduct = new Array();
 	arrPrice = new Array();
 	dictProduct = {};
+	dictCheck = {};
+	rep = 0;
+	sumOfBill = 0;
+	$(".list").remove();
+	$(".p1").remove();
+});
+
+//X 단추를 부르면 값들을 초기화 시킴
+$(".close-button").click(function() {
+	idx = 0;
 	dictCheck = {};
 	rep = 0;
 	sumOfBill = 0;
@@ -131,7 +142,7 @@ $("#payment").click(function() {
 
 		// 2초 뒤에 function 실행
 		setTimeout(function() {
-			location.href = "http://182.229.50.83:8080/kiosk/"
+			location.href = "http://localhost:8080/kiosk/"
 		}, 2000);
 	} else {
 		// ajax를 활용해 서버로 보낼 data를 만드는 반복문
@@ -151,7 +162,7 @@ $("#payment").click(function() {
 		if (rsp == true) {
 			// ajax를 활용하여 서버에 data를 post형식으로 보냄
 			$.ajax({
-				url : "http://182.229.50.83:8080/kiosk/insert.do",
+				url : "http://localhost:8080/kiosk/insert.do",
 				method : "POST",
 				crossDomain : true,
 				contentType : 'application/json;charset=UTF-8',
@@ -170,7 +181,7 @@ $("#payment").click(function() {
 
 				// 4초 뒤에 function 실행
 				setTimeout(function() {
-					location.href = "http://182.229.50.83:8080/kiosk/"
+					location.href = "http://localhost:8080/kiosk/"
 				}, 4000);
 			});
 		} else {
@@ -198,7 +209,7 @@ $(".trigger2").click(function() {
 
 		// 2초 뒤에 function 실행
 		setTimeout(function() {
-			location.href = "http://182.229.50.83:8080/kiosk/"
+			location.href = "http://localhost:8080/kiosk/"
 		}, 2000);
 	} else {
 		// ajax를 활용해 서버로 보낼 data를 만드는 반복문
@@ -218,7 +229,7 @@ $(".trigger2").click(function() {
 		if (rsp == true) {
 			// ajax를 활용하여 서버에 data를 post형식으로 보냄
 			$.ajax({
-				url : "http://182.229.50.83:8080/kiosk/insert.do",
+				url : "http://localhost:8080/kiosk/insert.do",
 				method : "POST",
 				crossDomain : true,
 				contentType : 'application/json;charset=UTF-8',
@@ -235,7 +246,7 @@ $(".trigger2").click(function() {
 
 				// 4초 뒤에 function 실행
 				setTimeout(function() {
-					location.href = "http://182.229.50.83:8080/kiosk/"
+					location.href = "http://localhost:8080/kiosk/"
 				}, 4000);
 			});
 		} else {
@@ -283,7 +294,7 @@ $("#coffee, #juice, #icetea, #tea, #dessert").click(
 					}
 				}
 				// coffee 메뉴가 있는 페이지로 이동
-				location.href = "http://182.229.50.83:8080/kiosk/coffee";
+				location.href = "http://localhost:8080/kiosk/coffee";
 			}
 			// click한 메뉴의 id값이 "juice"라면
 			else if ($(this).attr("id") == "juice") {
@@ -313,7 +324,7 @@ $("#coffee, #juice, #icetea, #tea, #dessert").click(
 					}
 				}
 				// juice 메뉴가 있는 페이지로 이동
-				location.href = "http://182.229.50.83:8080/kiosk/juice";
+				location.href = "http://localhost:8080/kiosk/juice";
 			}
 			// click한 메뉴의 id값이 "icetea"라면
 			else if ($(this).attr("id") == "icetea") {
@@ -343,7 +354,7 @@ $("#coffee, #juice, #icetea, #tea, #dessert").click(
 					}
 				}
 				// icetea 메뉴가 있는 페이지로 이동
-				location.href = "http://182.229.50.83:8080/kiosk/icetea";
+				location.href = "http://localhost:8080/kiosk/icetea";
 			}
 			// click한 메뉴의 id값이 "tea"라면
 			else if ($(this).attr("id") == "tea") {
@@ -373,7 +384,7 @@ $("#coffee, #juice, #icetea, #tea, #dessert").click(
 					}
 				}
 				// tea 메뉴가 있는 페이지로 이동
-				location.href = "http://182.229.50.83:8080/kiosk/tea";
+				location.href = "http://localhost:8080/kiosk/tea";
 			}
 			// click한 메뉴의 id값이 "dessert"라면
 			else {
@@ -403,6 +414,6 @@ $("#coffee, #juice, #icetea, #tea, #dessert").click(
 					}
 				}
 				// dessert 메뉴가 있는 페이지로 이동
-				location.href = "http://182.229.50.83:8080/kiosk/dessert";
+				location.href = "http://localhost:8080/kiosk/dessert";
 			}
 		});
